@@ -1,6 +1,66 @@
-<!DOCTYPE html><html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title>Math</title> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <link rel="stylesheet" type="text/css" media="screen" href="main.css"> </head> <body> <svg><defs><filter id="drop-shadow"><feGaussianBlur in="SourceGraphic"/><feOffset dx="15" dy="-15"/><feComponentTransfer><feFuncA type="linear" slope=".4"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></svg> <div class="slider-container"> <div class="mdc-slider" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" aria-label="Select Value"> <div class="mdc-slider__track-container"> <div class="mdc-slider__track"></div> </div> <div class="mdc-slider__thumb-container"> <svg class="mdc-slider__thumb" width="21" height="21"><circle cx="10.5" cy="10.5" r="7.875"/></svg> <div class="mdc-slider__focus-ring"></div> </div> </div> <button id="play" class="mdc-icon-button" aria-label="Add to favorites" aria-hidden="true" aria-pressed="false"> <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">pause</i> <i class="material-icons mdc-icon-button__icon">play_arrow</i> </button> </div> <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> <script>var e=new mdc.slider.MDCSlider(document.querySelector(".mdc-slider"));e.listen("MDCSlider:change",function(){return console.log("Value changed to ".concat(e.value))});</script> <script type="text/x-mathjax-config">
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Math</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+
+</head>
+
+<body>
+  <svg id="svg" viewbox="0 0 128 72">
+    <defs>
+      <filter id="drop-shadow">
+          <feGaussianBlur in="SourceGraphic" stddeviation="20"></feGaussianBlur> 
+          <feOffset dx="15" dy="-15"></feOffset>
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="0.4"></feFuncA>
+          </feComponentTransfer>
+          <feMerge> 
+            <feMergeNode></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode> 
+          </feMerge>
+        </filter>
+    </defs>
+  </svg>
+
+  <div class="slider-container">
+    <div class="mdc-slider" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0" aria-label="Select Value">
+      <div class="mdc-slider__track-container">
+        <div class="mdc-slider__track"></div>
+      </div>
+      <div class="mdc-slider__thumb-container">
+        <svg class="mdc-slider__thumb" width="21" height="21">
+          <circle cx="10.5" cy="10.5" r="7.875"></circle>
+        </svg>
+        <div class="mdc-slider__focus-ring"></div>
+      </div>
+    </div>
+    <button id="play" class="mdc-icon-button" aria-label="Add to favorites" aria-hidden="true" aria-pressed="false">
+      <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">pause</i>
+      <i class="material-icons mdc-icon-button__icon">play_arrow</i>
+    </button>
+  </div>
+
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script>var slider = new mdc.slider.MDCSlider(document.querySelector('.mdc-slider'));
+slider.listen('MDCSlider:change', function () {
+  return console.log("Value changed to ".concat(slider.value));
+});</script>
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       messageStyle: "none",
       blacker: 10,
     });
-    </script> <script src="main.js"></script> </body> </html>
+    </script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
